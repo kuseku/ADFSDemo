@@ -11,7 +11,10 @@ namespace DemoApp.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var user = User as ADFSUser;
+            
+
+            return View(new ViewModels.HomeViewModel() {User=user });
         }
 
         public ActionResult About()

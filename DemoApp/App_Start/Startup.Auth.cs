@@ -21,13 +21,15 @@ namespace DemoApp
             app.SetDefaultSignInAsAuthenticationType(CookieAuthenticationDefaults.AuthenticationType);
 
             app.UseCookieAuthentication(new CookieAuthenticationOptions());
-
+ 
             app.UseWsFederationAuthentication(
                 new WsFederationAuthenticationOptions
                 {
                     Wtrealm = realm,
                     MetadataAddress = adfsMetadata
                 });
+
+            
         }
     }
 }

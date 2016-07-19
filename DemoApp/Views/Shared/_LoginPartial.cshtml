@@ -3,9 +3,10 @@
     <text>
         <ul class="nav navbar-nav navbar-right">
             <li class="navbar-text">
-                @if (User.Identity.Name != null)
+                @if (User != null)
                 {
-                    <text>Hello, @User.Identity.Name!</text>
+                    var adfsUser = User as ADFSUser;
+                    <text>Hello, @adfsUser.FullName (@adfsUser.BCMID)!</text>
                 }
                 else
                 {
